@@ -1,0 +1,250 @@
+{
+  "_help": "Ajustes que el script tools/update_publications.py aplica sobre lo que devuelve ORCID. 'extra_dois': DOIs que no están en ORCID pero que quieres mostrar (se completan con Crossref). 'manual': trabajos sin DOI o aún sin registrar en Crossref. 'exclude': DOIs que no quieres mostrar. 'overrides': correcciones por DOI (title, type, venue, authors, note, first). 'author_fixes': reemplazos de apellidos mal codificados.",
+  "orcid": "0000-0003-1021-2050",
+  "extra_dois": [
+    "10.1038/s41598-026-42214-7"
+  ],
+  "exclude": [],
+  "manual": [
+    {
+      "doi": "10.2196/105912",
+      "year": 2026,
+      "type": "article",
+      "title": "Multimodal Artificial Intelligence for Prostate Cancer Diagnosis and Risk Stratification: A Scoping Review",
+      "authors": [
+        [
+          "Jesus Alejandro",
+          "Alzate-Grisales"
+        ],
+        [
+          "Felipe",
+          "Ocampo Osorio"
+        ],
+        [
+          "Jose Daniel",
+          "Restrepo Orozco"
+        ],
+        [
+          "Juan Diego",
+          "Rendon Tabares"
+        ],
+        [
+          "Miguel",
+          "Perán-Teruel"
+        ],
+        [
+          "Azahar",
+          "Navarro Beltrán"
+        ],
+        [
+          "Clara",
+          "Ruiz Torres"
+        ],
+        [
+          "Francisco",
+          "García-García"
+        ],
+        [
+          "Reinel",
+          "Tabares-Soto"
+        ],
+        [
+          "Juan M",
+          "García-Gómez"
+        ],
+        [
+          "Maria",
+          "de la Iglesia-Vayá"
+        ]
+      ],
+      "venue": "Journal of Medical Internet Research",
+      "note": {
+        "es": "Aceptado, en prensa",
+        "en": "Accepted, in press"
+      }
+    },
+    {
+      "doi": null,
+      "year": 2026,
+      "type": "conference",
+      "title": "From 3T to 7T: supervised learning for enhanced 4D flow MRI in intracranial aneurysms",
+      "authors": [
+        [
+          "Shaokai",
+          "Zheng"
+        ],
+        [
+          "Jesús Alejandro",
+          "Alzate-Grisales"
+        ],
+        [
+          "Ning",
+          "Jin"
+        ],
+        [
+          "Gabriele",
+          "Bonanno"
+        ],
+        [
+          "Lorenz",
+          "Grunder"
+        ],
+        [
+          "Philipe",
+          "Breiding"
+        ],
+        [
+          "María",
+          "de la Iglesia-Vayá"
+        ],
+        [
+          "Piotr",
+          "Radojewski"
+        ],
+        [
+          "Bernd",
+          "Jung"
+        ],
+        [
+          "Dominik",
+          "Obrist"
+        ]
+      ],
+      "venue": "9th Int. Conf. on Computational and Mathematical Biomedical Engineering (CMBE 2026), Kobe",
+      "note": {
+        "es": "Contribución igualitaria, coprimer autor",
+        "en": "Equal contribution, co-first author"
+      },
+      "first": true
+    }
+  ],
+  "overrides": {
+    "10.1097/01.ju.0001110136.41716.b7.40": {
+      "type": "conference",
+      "title": "Clinically significant prostate cancer detection with deep learning in a multi-center magnetic resonance imaging study"
+    },
+    "10.1016/j.eururo.2025.09.4115": {
+      "type": "conference"
+    },
+    "10.1016/j.eururo.2025.09.2924": {
+      "type": "conference"
+    },
+    "10.4018/978-1-6684-2304-2.ch007": {
+      "venue": "AI Applications for Disease Diagnosis and Treatment (IGI Global)"
+    },
+    "10.1007/978-3-030-78901-5_11": {
+      "venue": "Sustainable Smart Cities and Territories, LNNS 253 (Springer)"
+    },
+    "10.21203/rs.3.rs-9883038/v1": {
+      "venue": "Research Square"
+    },
+    "10.31224/6278": {
+      "venue": "engrXiv"
+    },
+    "10.20944/preprints202002.0443.v1": {
+      "venue": "Preprints.org"
+    },
+    "10.48550/arxiv.2206.05615": {
+      "venue": "arXiv"
+    },
+    "10.1109/access.2021.3052494": {
+      "authors": [
+        [
+          "Reinel",
+          "Tabares-Soto"
+        ],
+        [
+          "Harold Brayan",
+          "Arteaga-Arteaga"
+        ],
+        [
+          "Mario Alejandro",
+          "Bravo-Ortiz"
+        ],
+        [
+          "Alejandro",
+          "Mora-Rubio"
+        ],
+        [
+          "Daniel",
+          "Arias-Garzón"
+        ],
+        [
+          "Jesús Alejandro",
+          "Alzate-Grisales"
+        ],
+        [
+          "Alejandro Buenaventura",
+          "Burbano-Jacome"
+        ],
+        [
+          "Simon",
+          "Orozco-Arias"
+        ],
+        [
+          "Gustavo",
+          "Isaza"
+        ],
+        [
+          "Raúl",
+          "Ramos-Pollán"
+        ]
+      ]
+    },
+    "10.32604/cmc.2022.019529": {
+      "authors": [
+        [
+          "Juan Pablo",
+          "Villa-Pulgarin"
+        ],
+        [
+          "Anderson Alberto",
+          "Ruales-Torres"
+        ],
+        [
+          "Daniel",
+          "Arias-Garzón"
+        ],
+        [
+          "Mario Alejandro",
+          "Bravo-Ortiz"
+        ],
+        [
+          "Harold Brayan",
+          "Arteaga-Arteaga"
+        ],
+        [
+          "Alejandro",
+          "Mora-Rubio"
+        ],
+        [
+          "Jesus Alejandro",
+          "Alzate-Grisales"
+        ],
+        [
+          "Esteban",
+          "Mercado-Ruiz"
+        ],
+        [
+          "M.",
+          "Hassaballah"
+        ],
+        [
+          "Simon",
+          "Orozco-Arias"
+        ],
+        [
+          "Oscar",
+          "Cardona-Morales"
+        ],
+        [
+          "Reinel",
+          "Tabares-Soto"
+        ]
+      ]
+    }
+  },
+  "author_fixes": {
+    "Arias-Garz髇": "Arias-Garzón"
+  }
+}

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jesús Alejandro Alzate-Grisales</title>
+  <meta name="description" content="Ingeniero biomédico e investigador en FISABIO-CIPF y la Universitat Politècnica de València. Inteligencia artificial para imagen médica y datos clínicos.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f7f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Jesús Alejandro Alzate-Grisales">
+  <meta property="og:description" content="Inteligencia artificial para imagen médica y datos clínicos.">
+  <meta property="og:image" content="assets/portrait.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23a8dcb5'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,Arial' font-size='26' font-weight='600' fill='%230f2b1a' text-anchor='middle'%3EJA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__pill">
+      <a class="nav__brand" href="#top">Jesús Alejandro Alzate Grisales</a>
+      <nav class="nav__links" id="navLinks" aria-label="Secciones" data-i18n-aria="nav.label">
+        <a href="#about" data-i18n="nav.about">Sobre mí</a>
+        <a href="#experience" data-i18n="nav.experience">Trayectoria</a>
+        <a href="#publications" data-i18n="nav.publications">Publicaciones</a>
+        <a href="#contact" data-i18n="nav.contact">Contacto</a>
+        <button class="lang" id="langToggle" type="button" lang="en">English</button>
+      </nav>
+      <button class="nav__menu" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="sr" data-i18n="nav.menu">Menú</span>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero__grid">
+        <figure class="hero__figure">
+          <img src="assets/portrait.jpg" width="720" height="930" alt="Retrato de Jesús Alejandro Alzate-Grisales" data-i18n-alt="hero.alt">
+        </figure>
+        <div class="hero__text">
+          <p class="hero__role" data-i18n="hero.role">Ingeniero biomédico y Data Scientist</p>
+          <h1>Jesús Alejandro Alzate-Grisales</h1>
+          <p class="hero__lede" data-i18n="hero.lede">Desarrollo inteligencia artificial para imagen médica y datos clínicos, pensada para llegar a la práctica.</p>
+          <p class="hero__aff" data-i18n="hero.aff">FISABIO-CIPF y Universitat Politècnica de València</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#contact" data-i18n="hero.cta1">Contactar</a>
+            <a class="btn btn--secondary" href="#publications" data-i18n="hero.cta2">Ver publicaciones</a>
+          </div>
+          <ul class="profiles" id="heroProfiles"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--grouped" id="about">
+      <div class="wrap">
+        <h2 data-i18n="about.title">Sobre mí</h2>
+        <div class="about">
+          <div class="about__text">
+            <p data-i18n="about.p1">Soy ingeniero biomédico, nací en Colombia y vivo en Valencia. Trabajo como científico de datos en la Unidad Mixta de Imagen Biomédica e Inteligencia Artificial FISABIO-CIPF y hago el doctorado en la Universitat Politècnica de València.</p>
+            <p data-i18n="about.p2">Me interesa que la IA sea útil en el hospital: modelos que combinan imagen y datos clínicos, que se pueden auditar y que explican su respuesta. He coordinado proyectos de realidad aumentada en neurocirugía, he trabajado en aprendizaje federado y doy clases de IA a investigadores y estudiantes.</p>
+          </div>
+          <dl class="skills" id="skills"></dl>
+        </div>
+        <h3 class="subhead" data-i18n="about.areas">Áreas de trabajo</h3>
+        <ul class="areas" id="areas"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <h2 data-i18n="exp.title">Trayectoria</h2>
+        <div class="columns">
+          <div>
+            <h3 class="subhead" data-i18n="exp.work">Experiencia</h3>
+            <ol class="group" id="workList"></ol>
+            <button class="link more" id="workMore" type="button" aria-expanded="false" aria-controls="workList"></button>
+          </div>
+          <div>
+            <h3 class="subhead" data-i18n="exp.education">Formación</h3>
+            <ol class="group" id="eduList"></ol>
+            <h3 class="subhead" data-i18n="exp.courses">Formación complementaria</h3>
+            <ol class="group group--compact" id="courseList"></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--grouped" id="publications">
+      <div class="wrap">
+        <div class="pubhead">
+          <h2 data-i18n="pubs.title">Publicaciones</h2>
+          <p class="pubhead__meta" id="pubsSummary"></p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search">
+            <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            <span class="sr" data-i18n="pubs.search">Buscar publicaciones</span>
+            <input type="search" id="pubSearch" placeholder="Buscar por título, autor o revista" data-i18n-ph="pubs.searchPh" autocomplete="off">
+          </label>
+          <div class="seg" role="radiogroup" aria-label="Tipo" data-i18n-aria="pubs.type" id="typeFilter"></div>
+          <label class="toggle"><input type="checkbox" id="firstOnly"><span class="toggle__ui" aria-hidden="true"></span><span data-i18n="pubs.first">Primer autor</span></label>
+        </div>
+        <div class="toolbar__status">
+          <span id="pubCount" aria-live="polite"></span>
+          <button class="link" id="expandAll" type="button"></button>
+        </div>
+
+        <div id="pubYears"></div>
+        <p class="empty" id="pubEmpty" hidden data-i18n="pubs.empty">Ninguna publicación coincide. Prueba con otra palabra o quita los filtros.</p>
+
+        <div class="pubfoot">
+          <button class="btn btn--secondary" id="exportBib" type="button" data-i18n="pubs.bib">Descargar BibTeX</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="talks">
+      <div class="wrap columns">
+        <div>
+          <h2 data-i18n="talks.title">Congresos</h2>
+          <ol class="group" id="talkList"></ol>
+          <button class="link more" id="talksMore" type="button" aria-expanded="false" aria-controls="talkList"></button>
+        </div>
+        <div>
+          <h2 data-i18n="awards.title">Distinciones</h2>
+          <ol class="group" id="awardList"></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--grouped contact" id="contact">
+      <div class="wrap contact__inner">
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <p data-i18n="contact.text">Para colaboraciones en IA clínica, imagen médica o docencia, escríbeme.</p>
+        <div class="contact__mail">
+          <a class="btn btn--primary btn--large" id="mailLink" href="#"></a>
+          <button class="btn btn--secondary" id="copyMail" type="button" data-i18n="contact.copy">Copiar dirección</button>
+        </div>
+        <ul class="profiles" id="contactProfiles"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year"></span> Jesús Alejandro Alzate-Grisales</span>
+      <span data-i18n="footer.updated">Actualizado en octubre de 2026</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">La lista de publicaciones necesita JavaScript. Consulta el perfil completo en <a href="https://orcid.org/0000-0003-1021-2050">ORCID</a>.</p></noscript>
+
+  <script src="data/content.js?v=3"></script>
+  <script src="data/publications.js?v=3"></script>
+  <script src="js/i18n.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
+</body>
+</html>
