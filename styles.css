@@ -21,6 +21,7 @@
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", system-ui, sans-serif;
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif;
   --ease: cubic-bezier(.25, .1, .25, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -247,7 +248,51 @@ p { margin: 0 0 1em; }
 }
 .toast.is-on { opacity: 1; }
 
+/* ---------- Motion ----------
+   Entrance on load, reveal on scroll, short and once. Reduced motion turns all of it off. */
+@keyframes rise { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
+@keyframes plate { from { opacity: 0; transform: translate3d(-24px, -24px, 0) scale(.96); } }
+@keyframes settle { from { opacity: 0; transform: scale(1.04); } }
+
+.hero__figure img { animation: settle .9s var(--ease-out) both; }
+.hero__figure::before { animation: plate 1s .15s var(--ease-out) both; transform: translate3d(0, var(--py, 0px), 0); }
+.hero__text > * { animation: rise .7s var(--ease-out) both; }
+.hero__text > :nth-child(1) { animation-delay: .1s; }
+.hero__text > :nth-child(2) { animation-delay: .18s; }
+.hero__text > :nth-child(3) { animation-delay: .26s; }
+.hero__text > :nth-child(4) { animation-delay: .32s; }
+.hero__text > :nth-child(5) { animation-delay: .38s; }
+.hero__text > :nth-child(6) { animation-delay: .44s; }
+.nav__pill { animation: rise .6s var(--ease-out) both; transition: box-shadow .3s, background .3s; }
+.nav.is-scrolled .nav__pill { box-shadow: var(--nav-shadow), 0 12px 32px rgba(0,0,0,.06); }
+
+/* single blocks */
+.js .reveal { transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+.js .reveal:not(.is-in) { opacity: 0; transform: translate3d(0, 28px, 0); }
+/* lists: the children arrive one after another */
+.js .stagger > * { transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(min(var(--i, 0), 8) * 60ms); }
+.js .stagger:not(.is-in) > * { opacity: 0; transform: translate3d(0, 20px, 0); }
+.stagger > :nth-child(2) { --i: 1; } .stagger > :nth-child(3) { --i: 2; } .stagger > :nth-child(4) { --i: 3; }
+.stagger > :nth-child(5) { --i: 4; } .stagger > :nth-child(6) { --i: 5; } .stagger > :nth-child(7) { --i: 6; }
+.stagger > :nth-child(8) { --i: 7; } .stagger > :nth-child(n+9) { --i: 8; }
+.js dl.stagger > * { transition-delay: calc(min(var(--i, 0), 8) * 30ms); }
+
+/* opening a year, or showing more rows */
+.is-opening > li { animation: rise .45s var(--ease-out) both; }
+.is-opening > li:nth-child(2) { animation-delay: 40ms; } .is-opening > li:nth-child(3) { animation-delay: 80ms; }
+.is-opening > li:nth-child(4) { animation-delay: 120ms; } .is-opening > li:nth-child(n+5) { animation-delay: 160ms; }
+
+/* light physicality on cards and buttons */
+.areas li { transition: transform .3s var(--ease-out), box-shadow .3s var(--ease-out); }
+@media (hover: hover) {
+  .areas li:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.07); }
+}
+.btn { transition: filter .15s, transform .15s var(--ease-out); }
+.btn:active { transform: scale(.97); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: .01ms !important; }
+  *, *::before, *::after { transition-duration: .01ms !important; transition-delay: 0s !important; animation: none !important; }
+  .js .reveal:not(.is-in), .js .stagger:not(.is-in) > * { opacity: 1; transform: none; }
+  .hero__figure::before { transform: none; }
 }
