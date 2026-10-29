@@ -6,15 +6,28 @@ Sitio estático (HTML, CSS y JS sin dependencias). Bilingüe ES/EN, modo claro y
 
 | Archivo | Qué contiene |
 | --- | --- |
-| `index.html` | Estructura de la página |
+| `index.html` | Página principal |
+| `phd.html` | Página del doctorado (PROST-AID) |
 | `styles.css` | Estilos y colores (claro y oscuro, con su contraste anotado) |
 | `data/content.js` | **Textos editables**: áreas, trayectoria, congresos, distinciones, herramientas, enlaces |
 | `data/publications.js` | Publicaciones (generado por el script, no editar a mano) |
 | `data/publications_extra.json` | Correcciones y trabajos que no están en ORCID |
 | `tools/update_publications.py` | Actualiza las publicaciones desde ORCID y Crossref |
 | `js/i18n.js` | Textos de la interfaz en español e inglés |
+| `data/phd.js` | **Todo el contenido del doctorado**: hitos, avance, resultados, publicaciones y glosario |
+| `js/phd.js` | Lógica de la página del doctorado |
 | `js/app.js` | Publicaciones por año, búsqueda, citas APA/BibTeX, idioma y navegación |
 | `assets/portrait.jpg` | Retrato |
+
+## Mantener al día el doctorado
+
+Edita `data/phd.js`:
+
+- `log`: añade una línea arriba cada vez que pase algo (fecha `"2026-11"` o solo `"2026"`).
+- `packages[].done`: el rango de avance de cada paquete de trabajo según el último informe anual.
+- `status.range` y `status.text`: el avance global que aparece arriba.
+- `results` y `outputs`: resultados nuevos y publicaciones (`published`, `accepted`, `review`, `preprint`, `talk`, `dataset`).
+- `updated`: la fecha de la última revisión.
 
 ## Actualizar las publicaciones
 

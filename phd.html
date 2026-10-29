@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>PROST-AID, tesis doctoral de Jesús Alejandro Alzate-Grisales</title>
+  <meta name="description" content="Tesis doctoral PROST-AID: inteligencia artificial multimodal para detectar el cáncer de próstata clínicamente significativo con resonancia y datos clínicos.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f7f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="PROST-AID, tesis doctoral">
+  <meta property="og:description" content="IA multimodal para detectar el cáncer de próstata clínicamente significativo.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23a8dcb5'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,Arial' font-size='26' font-weight='600' fill='%230f2b1a' text-anchor='middle'%3EJA%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__pill">
+      <a class="nav__brand" href="index.html">Jesús Alejandro Alzate Grisales</a>
+      <nav class="nav__links" id="navLinks" aria-label="Secciones" data-i18n-aria="nav.label">
+        <a href="#project" data-i18n="phd.nav.project">Proyecto</a>
+        <a href="#results" data-i18n="phd.nav.results">Resultados</a>
+        <a href="#plan" data-i18n="phd.nav.plan">Plan</a>
+        <a href="#outputs" data-i18n="phd.nav.outputs">Publicaciones</a>
+        <a href="#glossary" data-i18n="phd.nav.glossary">Glosario</a>
+        <button class="lang" id="langToggle" type="button" lang="en">English</button>
+      </nav>
+      <button class="nav__menu" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="sr" data-i18n="nav.menu">Menú</span>
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="phero" id="top">
+      <div class="wrap">
+        <a class="back" href="index.html" data-i18n="phd.back">Volver al inicio</a>
+        <p class="hero__role" data-i18n="phd.eyebrow">Mi doctorado</p>
+        <h1 id="phdAcronym">PROST-AID</h1>
+        <p class="phero__title" id="phdTitle"></p>
+        <p class="phero__lede" id="phdLede"></p>
+
+        <div class="status">
+          <div class="status__top">
+            <span class="status__label" data-i18n="phd.progress">Avance de la tesis</span>
+            <span class="status__value" id="statusValue"></span>
+          </div>
+          <div class="bar" id="statusBar" role="img"><span class="bar__done"></span><span class="bar__range"></span></div>
+          <p class="status__text" id="statusText"></p>
+          <p class="status__updated" id="statusUpdated"></p>
+        </div>
+
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </section>
+
+    <section class="section section--grouped" id="project">
+      <div class="wrap">
+        <h2 class="reveal" data-i18n="phd.what">De qué trata</h2>
+        <div class="why stagger" id="why"></div>
+
+        <h3 class="subhead reveal" data-i18n="phd.how">Cómo funciona</h3>
+        <ol class="flow stagger" id="flow"></ol>
+
+        <h3 class="subhead reveal" data-i18n="phd.objectives">Objetivos</h3>
+        <ol class="group stagger objectives" id="objectives"></ol>
+
+        <h3 class="subhead reveal" data-i18n="phd.data">Los datos</h3>
+        <div class="figures stagger" id="dataFigures"></div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="wrap">
+        <h2 class="reveal" data-i18n="phd.results">Resultados hasta ahora</h2>
+        <div class="results stagger" id="resultCards"></div>
+      </div>
+    </section>
+
+    <section class="section section--grouped" id="plan">
+      <div class="wrap">
+        <h2 class="reveal" data-i18n="phd.plan">Plan de trabajo</h2>
+        <p class="lead reveal" data-i18n="phd.planLead">Siete paquetes de trabajo repartidos en tres años de ayuda y uno de prórroga. El tramo intenso de cada barra es lo completado con seguridad; el suave llega hasta el máximo que da el último informe.</p>
+        <ol class="group stagger packages" id="packages"></ol>
+
+        <div class="columns plan__cols">
+          <div>
+            <h3 class="subhead reveal" data-i18n="phd.log">Hitos y novedades</h3>
+            <ol class="group stagger timeline" id="log"></ol>
+          </div>
+          <div>
+            <h3 class="subhead reveal" data-i18n="phd.next">Lo siguiente</h3>
+            <ul class="group stagger" id="next"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="outputs">
+      <div class="wrap">
+        <h2 class="reveal" data-i18n="phd.outputs">Publicaciones y comunicaciones</h2>
+        <div class="seg reveal" role="radiogroup" aria-label="Estado" data-i18n-aria="phd.statusFilter" id="outFilter"></div>
+        <ol class="group stagger outputs" id="outList"></ol>
+      </div>
+    </section>
+
+    <section class="section section--grouped" id="glossary">
+      <div class="wrap">
+        <h2 class="reveal" data-i18n="phd.glossary">Glosario</h2>
+        <p class="lead reveal" data-i18n="phd.glossaryLead">Los términos que aparecen en la tesis, explicados sin jerga.</p>
+        <label class="search reveal">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span class="sr" data-i18n="phd.glossarySearch">Buscar un término</span>
+          <input type="search" id="glossSearch" placeholder="Buscar un término" data-i18n-ph="phd.glossarySearch" autocomplete="off">
+        </label>
+        <div class="gloss stagger" id="glossList"></div>
+        <p class="empty" id="glossEmpty" hidden data-i18n="phd.glossaryEmpty">Ningún término coincide.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year"></span> Jesús Alejandro Alzate-Grisales</span>
+      <a href="index.html" data-i18n="phd.back">Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="data/phd.js?v=6"></script>
+  <script src="js/i18n.js?v=6"></script>
+  <script src="js/phd.js?v=6"></script>
+</body>
+</html>
