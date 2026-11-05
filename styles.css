@@ -14,6 +14,9 @@
   --pastel: #cfead6;             /* primary action */
   --on-pastel: #1f4d31;
   --pastel-soft: #e3f2e6;        /* secondary action, selection */
+  --plate-top: #e3f2e6;          /* portrait plate */
+  --plate-bottom: #bfe3c8;
+  --plate-shadow: rgba(31, 77, 49, 0.16);
   --switch-on: #7cc792;
   --nav-bg: rgba(255, 255, 255, 0.72);
   --nav-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.08);
@@ -36,6 +39,9 @@
     --pastel: #a8dcb5;
     --on-pastel: #0f2b1a;
     --pastel-soft: #22332a;
+    --plate-top: #2c4535;
+    --plate-bottom: #1b2b21;
+    --plate-shadow: rgba(0, 0, 0, 0.45);
     --switch-on: #5fae78;
     --nav-bg: rgba(36, 36, 38, 0.72);
     --nav-shadow: 0 0 0 1px rgba(255,255,255,.08), 0 8px 24px rgba(0,0,0,.5);
@@ -143,10 +149,15 @@ p { margin: 0 0 1em; }
 .hero { padding: 120px 0 clamp(64px, 9vw, 104px); }
 .hero__grid { display: grid; grid-template-columns: minmax(260px, 380px) 1fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
 .hero__figure { margin: 0; position: relative; }
-.hero__figure::before {                       /* soft pastel plate behind the portrait */
-  content: ""; position: absolute; inset: 24px -18px -18px 24px; border-radius: 32px; background: var(--pastel); opacity: .7;
+.hero__figure::before {                       /* pastel plate the portrait stands on; the head rises past its top edge */
+  content: ""; position: absolute; inset: 30% 0 0 0; border-radius: 32px;
+  background: linear-gradient(165deg, var(--plate-top), var(--plate-bottom));
 }
-.hero__figure img { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; border-radius: 28px; background: var(--grouped); }
+.hero__figure img {
+  position: relative; display: block; width: 100%; height: auto;
+  border-radius: 0 0 32px 32px;               /* the body ends flush with the plate's rounded corners */
+  filter: drop-shadow(0 8px 22px var(--plate-shadow));
+}
 .hero__role { margin: 0 0 12px; font-size: 1.0625rem; font-weight: 600; color: var(--green); }
 .hero h1 { font-size: clamp(2.5rem, 5.4vw, 4rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.04; }
 .hero__lede { margin: 20px 0 0; font-size: clamp(1.25rem, 2.1vw, 1.5rem); line-height: 1.35; letter-spacing: -0.01em; max-width: 30ch; }
@@ -353,11 +364,13 @@ p { margin: 0 0 1em; }
 /* ---------- Motion ----------
    Entrance on load, reveal on scroll, short and once. Reduced motion turns all of it off. */
 @keyframes rise { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
-@keyframes plate { from { opacity: 0; transform: translate3d(-24px, -24px, 0) scale(.96); } }
-@keyframes settle { from { opacity: 0; transform: scale(1.04); } }
+@keyframes plate { from { opacity: 0; transform: scale(.94); } }
+@keyframes settle { from { opacity: 0; transform: scale(.97); } }
 
-.hero__figure img { animation: settle .9s var(--ease-out) both; }
-.hero__figure::before { animation: plate 1s .15s var(--ease-out) both; transform: translate3d(0, var(--py, 0px), 0); }
+/* both grow from the bottom edge so the body never slips below the plate */
+.hero__figure { transform: translate3d(0, var(--py, 0px), 0); }
+.hero__figure::before { transform-origin: 50% 100%; animation: plate .9s var(--ease-out) both; }
+.hero__figure img { transform-origin: 50% 100%; animation: settle 1s .12s var(--ease-out) both; }
 .hero__text > * { animation: rise .7s var(--ease-out) both; }
 .hero__text > :nth-child(1) { animation-delay: .1s; }
 .hero__text > :nth-child(2) { animation-delay: .18s; }
@@ -396,5 +409,5 @@ p { margin: 0 0 1em; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; transition-delay: 0s !important; animation: none !important; }
   .js .reveal:not(.is-in), .js .stagger:not(.is-in) > * { opacity: 1; transform: none; }
-  .hero__figure::before { transform: none; }
+  .hero__figure { transform: none; }
 }
