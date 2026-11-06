@@ -24,6 +24,7 @@
     $$("[data-i18n-ph]").forEach((el) => { el.placeholder = t(el.dataset.i18nPh); });
     $$("[data-i18n-alt]").forEach((el) => { el.alt = t(el.dataset.i18nAlt); });
     $$("[data-i18n-aria]").forEach((el) => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
+    $$("[data-i18n-href]").forEach((el) => { el.href = t(el.dataset.i18nHref); });   // CV in the reader's language
     const btn = $("#langToggle");
     btn.textContent = t("lang.other");
     btn.lang = t("lang.otherCode");
