@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
   <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
@@ -39,24 +39,34 @@
 
   <main id="main">
     <section class="phero" id="top">
-      <div class="wrap">
-        <a class="back" href="index.html" data-i18n="phd.back">Volver al inicio</a>
-        <p class="hero__role" data-i18n="phd.eyebrow">Mi doctorado</p>
-        <h1 id="phdAcronym">PROST-AID</h1>
-        <p class="phero__title" id="phdTitle"></p>
-        <p class="phero__lede" id="phdLede"></p>
-
-        <div class="status">
-          <div class="status__top">
-            <span class="status__label" data-i18n="phd.progress">Avance de la tesis</span>
-            <span class="status__value" id="statusValue"></span>
-          </div>
-          <div class="bar" id="statusBar" role="img"><span class="bar__done"></span><span class="bar__range"></span></div>
-          <p class="status__text" id="statusText"></p>
-          <p class="status__updated" id="statusUpdated"></p>
+      <div class="wrap phero__grid">
+        <div class="phero__intro">
+          <a class="back" href="index.html" data-i18n="phd.back">Volver al inicio</a>
+          <p class="hero__role" data-i18n="phd.eyebrow">Mi doctorado</p>
+          <h1 id="phdAcronym">PROST-AID</h1>
+          <p class="phero__lede" id="phdLede"></p>
+          <p class="phero__title"><span data-i18n="phd.officialTitle">Título oficial</span> <span id="phdTitle"></span></p>
         </div>
 
-        <dl class="facts" id="facts"></dl>
+        <aside class="status" aria-labelledby="statusLabel">
+          <div class="status__top">
+            <span class="status__label" id="statusLabel" data-i18n="phd.progress">Avance de la tesis</span>
+            <span class="status__value" id="statusValue"></span>
+          </div>
+          <div class="bar" id="statusBar" role="img"><span class="bar__range"></span><span class="bar__done"></span></div>
+          <p class="legend" aria-hidden="true"><span><i class="legend__done"></i><span data-i18n="phd.legendDone">Completado</span></span><span><i class="legend__range"></i><span data-i18n="phd.legendRange">Hasta el máximo del informe</span></span></p>
+          <p class="status__text" id="statusText"></p>
+          <dl class="facts" id="facts"></dl>
+          <p class="status__updated" id="statusUpdated"></p>
+        </aside>
+      </div>
+
+      <div class="wrap">
+        <figure class="film">
+          <video class="autofilm" id="phdFilm" src="assets/prostaid.mp4?v=2" poster="assets/prostaid-poster.jpg?v=2" width="1920" height="1080"
+            muted loop playsinline controls preload="metadata" aria-describedby="filmCaption"></video>
+          <figcaption id="filmCaption" data-i18n="phd.filmCaption">PROST-AID en 54 segundos. Vídeo en inglés, con el texto en pantalla y sin voz.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -72,13 +82,19 @@
         <ol class="group stagger objectives" id="objectives"></ol>
 
         <h3 class="subhead reveal" data-i18n="phd.data">Los datos</h3>
-        <div class="figures stagger" id="dataFigures"></div>
+        <div class="figures reveal" id="dataFigures"></div>
       </div>
     </section>
 
     <section class="section" id="results">
       <div class="wrap">
         <h2 class="reveal" data-i18n="phd.results">Resultados hasta ahora</h2>
+        <figure class="film film--paper reveal">
+          <video class="autofilm" id="paperFilm" src="assets/csdetect.mp4?v=1" poster="assets/csdetect-poster.jpg?v=1" width="1920" height="1080"
+            muted loop playsinline controls preload="metadata" aria-describedby="paperCaption"></video>
+          <figcaption id="paperCaption"><span data-i18n="phd.paperCaption">El artículo de Scientific Reports en 84 segundos. Vídeo en inglés, con figuras del propio artículo.</span>
+            <a href="https://doi.org/10.1038/s41598-026-42214-7" target="_blank" rel="noopener" data-i18n="phd.paperLink">Leer el artículo</a></figcaption>
+        </figure>
         <div class="results stagger" id="resultCards"></div>
       </div>
     </section>
@@ -86,26 +102,22 @@
     <section class="section section--grouped" id="plan">
       <div class="wrap">
         <h2 class="reveal" data-i18n="phd.plan">Plan de trabajo</h2>
-        <p class="lead reveal" data-i18n="phd.planLead">Siete paquetes de trabajo repartidos en tres años de ayuda y uno de prórroga. El tramo intenso de cada barra es lo completado con seguridad; el suave llega hasta el máximo que da el último informe.</p>
+        <p class="lead reveal" data-i18n="phd.planLead">Siete paquetes de trabajo repartidos en tres años de ayuda y uno de prórroga.</p>
+        <p class="legend legend--plan reveal" aria-hidden="true"><span><i class="legend__done"></i><span data-i18n="phd.legendDone">Completado</span></span><span><i class="legend__range"></i><span data-i18n="phd.legendRange">Hasta el máximo del informe</span></span></p>
         <ol class="group stagger packages" id="packages"></ol>
 
-        <div class="columns plan__cols">
-          <div>
-            <h3 class="subhead reveal" data-i18n="phd.log">Hitos y novedades</h3>
-            <ol class="group stagger timeline" id="log"></ol>
-          </div>
-          <div>
-            <h3 class="subhead reveal" data-i18n="phd.next">Lo siguiente</h3>
-            <ul class="group stagger" id="next"></ul>
-          </div>
-        </div>
+        <h3 class="subhead reveal" data-i18n="phd.next">Lo siguiente</h3>
+        <ul class="group next stagger" id="next"></ul>
+
+        <h3 class="subhead reveal" data-i18n="phd.log">Hitos y novedades</h3>
+        <div class="years stagger" id="log"></div>
       </div>
     </section>
 
     <section class="section" id="outputs">
       <div class="wrap">
         <h2 class="reveal" data-i18n="phd.outputs">Publicaciones y comunicaciones</h2>
-        <div class="seg reveal" role="radiogroup" aria-label="Estado" data-i18n-aria="phd.statusFilter" id="outFilter"></div>
+        <div class="seg reveal" role="radiogroup" aria-label="Tipo" data-i18n-aria="phd.statusFilter" id="outFilter"></div>
         <ol class="group stagger outputs" id="outList"></ol>
       </div>
     </section>
@@ -132,8 +144,8 @@
     </div>
   </footer>
 
-  <script src="data/phd.js?v=8"></script>
-  <script src="js/i18n.js?v=8"></script>
-  <script src="js/phd.js?v=8"></script>
+  <script src="data/phd.js?v=12"></script>
+  <script src="js/i18n.js?v=12"></script>
+  <script src="js/phd.js?v=12"></script>
 </body>
 </html>
